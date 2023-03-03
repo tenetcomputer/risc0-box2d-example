@@ -62,8 +62,6 @@ dependencies = [
 [[package]]
 name = "box2d-rs"
 version = "0.0.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb2c88c5dd68310daa991cecdd3db82190e98f728b9e3748387b3392470daa27"
 dependencies = [
  "bitflags",
  "serde",
