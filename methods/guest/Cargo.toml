@@ -10,3 +10,4 @@ risc0-build = "0.13"
 
 [dependencies]
 risc0-zkvm = { version = "0.13", default-features = false, features = ["std"]}
+serde = "1.0"

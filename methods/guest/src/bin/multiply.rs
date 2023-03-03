@@ -18,6 +18,11 @@ use risc0_zkvm::guest::env;
 
 risc0_zkvm::guest::entry!(main);
 
+use std::sync::atomic::{AtomicUsize,AtomicU8};
+pub static B2_TOI_TIME: AtomicU8 = AtomicU8::new(0);
+
+// mod hello_world;
+
 pub fn main() {
     // Load the first number from the host
     let a: u64 = env::read();
@@ -27,6 +32,9 @@ pub fn main() {
     if a == 1 || b == 1 {
         panic!("Trivial factors")
     }
+
+    // hello_world::hello_world();
+
     // Compute the product while being careful with integer overflow
     let product = a.checked_mul(b).expect("Integer overflow");
     env::commit(&product);
