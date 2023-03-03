@@ -326,6 +326,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "externc-libm"
+version = "0.1.0"
+source = "git+https://github.com/HaruxOS/externc-libm#873e2ee216f59f20521599adf7669ccc9014b60d"
+dependencies = [
+ "libm",
+]
+
+[[package]]
 name = "fastrand"
 version = "1.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -709,6 +717,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 
 [[package]]
+name = "libm"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "348108ab3fba42ec82ff6e9564fc4ca0247bdccdc68dd8af9764bbc79c3c8ffb"
+
+[[package]]
 name = "linux-raw-sys"
 version = "0.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -734,6 +748,7 @@ name = "methods-guest"
 version = "0.1.0"
 dependencies = [
  "box2d-rs",
+ "externc-libm",
  "risc0-build",
  "risc0-zkvm",
  "serde",

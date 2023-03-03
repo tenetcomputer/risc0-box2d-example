@@ -7,6 +7,5 @@ edition = "2021"
 
 [dependencies]
 risc0-zkvm = "0.13"
-box2d-rs = { version = "0.0.3", features = ["serde_support"] }
 methods = { path = "../methods" }
 serde = "1.0"

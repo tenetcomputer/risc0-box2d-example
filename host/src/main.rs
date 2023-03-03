@@ -4,14 +4,14 @@ use risc0_zkvm::{
     Prover,
 };
 
-mod hello_world;
+// mod hello_world;
 
 fn main() {
     // Pick two numbers
     let a: u64 = 17;
     let b: u64 = 23;
 
-    hello_world::hello_world();
+    // hello_world::hello_world();
 
     // Multiply them inside the ZKP
     // First, we make the prover, loading the 'multiply' method
