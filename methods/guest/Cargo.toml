@@ -10,4 +10,5 @@ risc0-build = "0.13"
 
 [dependencies]
 risc0-zkvm = { version = "0.13", default-features = false, features = ["std"]}
+box2d-rs = { version = "0.0.3", features = ["serde_support"] }
 serde = "1.0"
