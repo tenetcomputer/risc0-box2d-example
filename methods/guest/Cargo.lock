@@ -62,6 +62,7 @@ dependencies = [
 [[package]]
 name = "box2d-rs"
 version = "0.0.3"
+source = "git+https://github.com/tenetcomputer/box2d-rs#db452dd9b4a37fb11398592457d3aaaee72b3e7c"
 dependencies = [
  "bitflags",
  "serde",
