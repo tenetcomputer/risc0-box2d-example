@@ -4,14 +4,10 @@ use risc0_zkvm::{
     Prover,
 };
 
-// mod hello_world;
-
 fn main() {
     // Pick two numbers
     let a: u64 = 17;
     let b: u64 = 23;
-
-    // hello_world::hello_world();
 
     // Multiply them inside the ZKP
     // First, we make the prover, loading the 'multiply' method
@@ -31,7 +27,7 @@ fn main() {
     println!("Proof finished!");
 
     // Extract journal of receipt (i.e. output c, where c = a * b)
-    let c: u64 = from_slice(&receipt.journal).expect(
+    let c: u32 = from_slice(&receipt.journal).expect(
         "Journal output should deserialize into the same types (& order) that it was written",
     );
 

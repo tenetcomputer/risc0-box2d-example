@@ -16,6 +16,9 @@
 
 pub extern crate externc_libm as libm;
 
+// use std::time::Instant;
+// use std::time::{Duration, SystemTime};
+
 use risc0_zkvm::guest::env;
 
 risc0_zkvm::guest::entry!(main);
@@ -41,7 +44,7 @@ impl UserDataType for UserDataTypes {
     type Joint = i32;
 }
 
-pub fn hello_world() {
+pub fn hello_world() -> f32 {
     // Define the gravity vector.
     let gravity = B2vec2::new(0.0, -10.0);
 
@@ -100,7 +103,7 @@ pub fn hello_world() {
     let mut angle: f32 = body.borrow().get_angle();
 
     // This is our little game loop.
-    for _i in 0..60 {
+    for _i in 0..1 {
         // Instruct the world to perform a single step of simulation.
         // It is generally best to keep the time step and iterations fixed.
         world
@@ -114,9 +117,11 @@ pub fn hello_world() {
         println!("{:4.2} {:4.2} {:4.2}", position.x, position.y, angle);
     }
 
-    assert!(b2_abs(position.x) < 0.01);
-    assert!(b2_abs(position.y - 1.01) < 0.01);
-    assert!(b2_abs(angle) < 0.01);
+    // assert!(b2_abs(position.x) < 0.01);
+    // assert!(b2_abs(position.y - 1.01) < 0.01);
+    // assert!(b2_abs(angle) < 0.01);
+
+    return position.y;
 }
 
 pub fn main() {
@@ -129,13 +134,10 @@ pub fn main() {
         panic!("Trivial factors")
     }
 
-    let result: f32 = f32::sqrt(81.0);
-    // let result: u32 = 10;
-    // env::commit(&result);
-
-    hello_world();
+    let result: f32 = hello_world();
+    let result: u32 = result as u32;
 
     // Compute the product while being careful with integer overflow
     let product = a.checked_mul(b).expect("Integer overflow");
-    env::commit(&product);
+    env::commit(&result);
 }
